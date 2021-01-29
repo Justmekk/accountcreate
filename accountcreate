@@ -1,0 +1,36 @@
+import re
+def Register():
+    student_name = input()
+    student_name = student_name.strip().replace(" ","")
+    
+    email = False
+    pattern = "e[0-9][0-9][0-9][0-9][0-9][0-9][0-9]@u.nus.edu"
+    pattern2 = "E[0-9][0-9][0-9][0-9][0-9][0-9][0-9]@u.nus.edu"
+    email_address = input()
+    email_address = email_address.strip()
+    result1 = re.search(pattern, email_address)
+    result1a = re.search(pattern2, email_address)
+    if result1 or result1a:
+        email = True
+    
+    stunum = False
+    pattern ="A[0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]"
+    student_number = input()
+    student_number = student_number.strip()
+    result2 = re.search(pattern, student_number)    
+    if result2:
+        stunum = True
+    
+    if email and stunum:
+        print (student_name)
+        print (email_address)
+        print (student_number)
+
+    else:
+        print ("invalid")
+
+
+T = int(input())
+while 0<T<=100:
+    T-=1
+    Register()
