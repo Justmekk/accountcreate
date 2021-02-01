@@ -31,6 +31,6 @@ def Register():
 
 
 T = int(input())
-while 0<T<=100:
+while 0<T:
     T-=1
     Register()
